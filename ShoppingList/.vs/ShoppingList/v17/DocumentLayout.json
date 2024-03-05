@@ -1,0 +1,101 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\binya\\source\\repos\\TalRodgold\\Window-systems-engineering\\ShoppingList\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D31D0D41-1F93-45E7-A8B6-2A65EB55DE89}|ShoppingList\\ShoppingList.csproj|c:\\users\\binya\\source\\repos\\talrodgold\\window-systems-engineering\\shoppinglist\\shoppinglist\\migrations\\20240301100703_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D31D0D41-1F93-45E7-A8B6-2A65EB55DE89}|ShoppingList\\ShoppingList.csproj|solutionrelative:shoppinglist\\migrations\\20240301100703_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D31D0D41-1F93-45E7-A8B6-2A65EB55DE89}|ShoppingList\\ShoppingList.csproj|c:\\users\\binya\\source\\repos\\talrodgold\\window-systems-engineering\\shoppinglist\\shoppinglist\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D31D0D41-1F93-45E7-A8B6-2A65EB55DE89}|ShoppingList\\ShoppingList.csproj|solutionrelative:shoppinglist\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D31D0D41-1F93-45E7-A8B6-2A65EB55DE89}|ShoppingList\\ShoppingList.csproj|c:\\users\\binya\\source\\repos\\talrodgold\\window-systems-engineering\\shoppinglist\\shoppinglist\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D31D0D41-1F93-45E7-A8B6-2A65EB55DE89}|ShoppingList\\ShoppingList.csproj|solutionrelative:shoppinglist\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D31D0D41-1F93-45E7-A8B6-2A65EB55DE89}|ShoppingList\\ShoppingList.csproj|c:\\users\\binya\\source\\repos\\talrodgold\\window-systems-engineering\\shoppinglist\\shoppinglist\\models\\foodcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D31D0D41-1F93-45E7-A8B6-2A65EB55DE89}|ShoppingList\\ShoppingList.csproj|solutionrelative:shoppinglist\\models\\foodcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D31D0D41-1F93-45E7-A8B6-2A65EB55DE89}|ShoppingList\\ShoppingList.csproj|c:\\users\\binya\\source\\repos\\talrodgold\\window-systems-engineering\\shoppinglist\\shoppinglist\\models\\food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D31D0D41-1F93-45E7-A8B6-2A65EB55DE89}|ShoppingList\\ShoppingList.csproj|solutionrelative:shoppinglist\\models\\food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20240301100703_Initial.cs",
+              "DocumentMoniker": "C:\\Users\\binya\\source\\repos\\TalRodgold\\Window-systems-engineering\\ShoppingList\\ShoppingList\\Migrations\\20240301100703_Initial.cs",
+              "RelativeDocumentMoniker": "ShoppingList\\Migrations\\20240301100703_Initial.cs",
+              "ToolTip": "C:\\Users\\binya\\source\\repos\\TalRodgold\\Window-systems-engineering\\ShoppingList\\ShoppingList\\Migrations\\20240301100703_Initial.cs",
+              "RelativeToolTip": "ShoppingList\\Migrations\\20240301100703_Initial.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-01T10:07:03.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\binya\\source\\repos\\TalRodgold\\Window-systems-engineering\\ShoppingList\\ShoppingList\\appsettings.json",
+              "RelativeDocumentMoniker": "ShoppingList\\appsettings.json",
+              "ToolTip": "C:\\Users\\binya\\source\\repos\\TalRodgold\\Window-systems-engineering\\ShoppingList\\ShoppingList\\appsettings.json",
+              "RelativeToolTip": "ShoppingList\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-03-01T09:43:02.107Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FoodContext.cs",
+              "DocumentMoniker": "C:\\Users\\binya\\source\\repos\\TalRodgold\\Window-systems-engineering\\ShoppingList\\ShoppingList\\Models\\FoodContext.cs",
+              "RelativeDocumentMoniker": "ShoppingList\\Models\\FoodContext.cs",
+              "ToolTip": "C:\\Users\\binya\\source\\repos\\TalRodgold\\Window-systems-engineering\\ShoppingList\\ShoppingList\\Models\\FoodContext.cs",
+              "RelativeToolTip": "ShoppingList\\Models\\FoodContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-01T09:36:51.169Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Food.cs",
+              "DocumentMoniker": "C:\\Users\\binya\\source\\repos\\TalRodgold\\Window-systems-engineering\\ShoppingList\\ShoppingList\\Models\\Food.cs",
+              "RelativeDocumentMoniker": "ShoppingList\\Models\\Food.cs",
+              "ToolTip": "C:\\Users\\binya\\source\\repos\\TalRodgold\\Window-systems-engineering\\ShoppingList\\ShoppingList\\Models\\Food.cs",
+              "RelativeToolTip": "ShoppingList\\Models\\Food.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-01T09:26:15.551Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\binya\\source\\repos\\TalRodgold\\Window-systems-engineering\\ShoppingList\\ShoppingList\\Program.cs",
+              "RelativeDocumentMoniker": "ShoppingList\\Program.cs",
+              "ToolTip": "C:\\Users\\binya\\source\\repos\\TalRodgold\\Window-systems-engineering\\ShoppingList\\ShoppingList\\Program.cs",
+              "RelativeToolTip": "ShoppingList\\Program.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-01T08:54:53.874Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\ShoppingList",
+    "\\ShoppingList\\ShoppingList",
+    "\\ShoppingList\\ShoppingList\\Migrations"
+  ],
+  "SelectedNode": "\\ShoppingList\\ShoppingList\\Migrations\\20240301100703_Initial.cs",
+  "PreviewInSolutionExplorer": false
+}
