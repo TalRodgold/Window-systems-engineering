@@ -22,6 +22,7 @@ import sys
 import os
 import re
 from functools import reduce
+from ....connect_to_cloud_services.recipe_api import user_input, get_recepies
 
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
@@ -549,24 +550,49 @@ class SetupMainWindow:
         #self.ui.load_pages.row_3_layout.addWidget(self.push_button_2)
         #self.ui.load_pages.row_3_layout.addWidget(self.toggle_button)
         #self.ui.load_pages.row_4_layout.addWidget(self.line_edit)
-        self.ui.load_pages.row_5_layout.addWidget(self.table_widget)
+        self.ui.load_pages.row_5_layout.addWidget(self.table_widget) 
+        
+        self.my_lable = QLabel("INVALID INPUT: please enter ingridients with spaces in between.")
+        self.my_lable.setStyleSheet("color: red;")
+
+        self.list_widget = QListWidget()
+
+        self.ui.load_pages.page_3_layout.addWidget(self.list_widget)
+        self.ui.load_pages.page_3_layout.addWidget(self.my_lable)
         self.ui.load_pages.page_3_layout.addWidget(self.line_edit)
         self.ui.load_pages.page_3_layout.addWidget(self.push_button_2)
         self.ui.load_pages.page_3_layout.addWidget(self.push_button_1)        
-        def user_input(unparsed_str: str) -> str:
-            split_list = re.split("[ ,]", unparsed_str)
-    
-            for string in split_list:
-                if not string.isalpha():
-                    raise ValueError(f"String '{string}' contains non-letter characters.")
-            return reduce(lambda x,y: x + ", " + y, split_list) 
-
+         
+        self.list_widget.hide()
+        self.my_lable.hide()
 
         def prin():
-            response = user_input(self.line_edit.text())
-            print(self.line_edit.text())
-        
+            try:
+                response = user_input(self.line_edit.text())
+                self.my_lable.hide()
+                counter = 0
+                for recepie in get_recepies(response):
+                    if counter > 10:
+                        break
+                    counter += 1
+                    item = QListWidgetItem(recepie)
+                    self.list_widget.addItem(item)
+                self.list_widget.show()
+                
+                print(self.line_edit.text())
+            except Exception as e:
+                print(e)
+                self.my_lable.show()
+        def open_website(item):
+            # Extract the URL from the clicked item's text
+            url = item.text()
+
+            # Open the URL in the default web browser
+            QDesktopServices.openUrl(QUrl(url))
         self.push_button_2.clicked.connect(prin)
+        
+        self.list_widget.itemClicked.connect(open_website)
+
    # except Exception as e:
     #    print("invalid input") # לתקן שהכל בסקופ של הטריי
         
