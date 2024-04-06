@@ -42,7 +42,7 @@
 #     print("Error occurred:", str(e))
 
 import requests
-
+import os
 # API credentials
 api_key = 'acc_f7fdd2eb8b0f369'
 api_secret = 'fa10d16de4c930c643cfb106f4b3d0f2'
@@ -51,7 +51,9 @@ api_secret = 'fa10d16de4c930c643cfb106f4b3d0f2'
 endpoint = 'https://api.imagga.com/v2/tags'
 
 # Local image file path
-image_path = 'connect_to_cloud_services\images_to_test\\fruits.jpg'  # Provide the path to your local image file
+image_path = os.path.join("PyOneDark_Qt_Widgets_Modern_GUI", "gui", "connect_to_cloud_services", "apple.jpg")
+
+#image_path = 'gui\\connect_to_cloud_services\\tmpedf1fhaj.jpg'  # Provide the path to your local image file
 
 # Basic authentication header
 auth_header = {
