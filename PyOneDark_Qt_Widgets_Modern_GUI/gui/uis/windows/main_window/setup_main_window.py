@@ -87,18 +87,10 @@ class SetupMainWindow:
             "is_active" : False
         },
         {
-            "btn_icon" : "icon_info.svg",
+            "btn_icon" : "icon_folder_open.svg",
             "btn_id" : "btn_new_file",
             "btn_text" : "Imagga",
             "btn_tooltip" : "Imagga",
-            "show_top" : True,
-            "is_active" : False
-        },
-        {
-            "btn_icon" : "icon_folder_open.svg",
-            "btn_id" : "btn_open_file",
-            "btn_text" : "Upload image",
-            "btn_tooltip" : "Upload image",
             "show_top" : True,
             "is_active" : False
         },
@@ -428,32 +420,10 @@ class SetupMainWindow:
             is_active = True
         )
 
-        # PUSH BUTTON 1
-        self.push_button_1 = PyPushButton(
-            text = "Add all items from my list",
-            radius  =8,
-            color = self.themes["app_color"]["text_foreground"],
-            bg_color = self.themes["app_color"]["dark_one"],
-            bg_color_hover = self.themes["app_color"]["dark_three"],
-            bg_color_pressed = self.themes["app_color"]["dark_four"]
-        )
-        self.push_button_1.setMinimumHeight(40)
-
-        # PUSH BUTTON 2
-        self.push_button_2 = PyPushButton(
-            text = "Find recepie",
-            radius = 8,
-            color = self.themes["app_color"]["text_foreground"],
-            bg_color = self.themes["app_color"]["dark_one"],
-            bg_color_hover = self.themes["app_color"]["dark_three"],
-            bg_color_pressed = self.themes["app_color"]["dark_four"]
-        )
-        self.icon_2 = QIcon(Functions.set_svg_icon("icon_send.svg"))
-        self.push_button_2.setMinimumHeight(40)
-        self.push_button_2.setIcon(self.icon_2)
+        
 
         # PY LINE EDIT
-        self.line_edit = PyLineEdit(
+        self.line_edit_1 = PyLineEdit(
             text = "",
             place_holder_text = "Place holder text",
             radius = 8,
@@ -464,7 +434,7 @@ class SetupMainWindow:
             bg_color_active = self.themes["app_color"]["dark_three"],
             context_color = self.themes["app_color"]["context_color"]
         )
-        self.line_edit.setMinimumHeight(30)
+        self.line_edit_1.setMinimumHeight(30)
 
         # TOGGLE BUTTON
         self.toggle_button = PyToggle(
@@ -552,49 +522,124 @@ class SetupMainWindow:
         #self.ui.load_pages.row_4_layout.addWidget(self.line_edit)
         self.ui.load_pages.row_5_layout.addWidget(self.table_widget) 
         
-        self.my_lable = QLabel("INVALID INPUT: please enter ingridients with spaces in between.")
-        self.my_lable.setStyleSheet("color: red;")
+       
 
-        self.list_widget = QListWidget()
+      
 
-        self.ui.load_pages.page_3_layout.addWidget(self.list_widget)
-        self.ui.load_pages.page_3_layout.addWidget(self.my_lable)
-        self.ui.load_pages.page_3_layout.addWidget(self.line_edit)
+
+
+        #/////////////////////////////////////// PAGE 3 ///////////////////////////////////////
+        
+
+        # PUSH BUTTON 1 - Add all items from my list
+        self.push_button_1 = PyPushButton(
+            text = "Add all items from my list",
+            radius  =8,
+            color = self.themes["app_color"]["text_foreground"],
+            bg_color = self.themes["app_color"]["dark_one"],
+            bg_color_hover = self.themes["app_color"]["dark_three"],
+            bg_color_pressed = self.themes["app_color"]["dark_four"]
+        )
+        self.push_button_1.setFixedSize(150, 40)
+
+        # ---------------------------------------------------------------------------------------
+        
+        # PUSH BUTTON 2 - Find recepie
+        self.push_button_2 = PyPushButton(
+            text = "Find recepie",
+            radius = 8,
+            color = self.themes["app_color"]["text_foreground"],
+            bg_color = self.themes["app_color"]["dark_one"],
+            bg_color_hover = self.themes["app_color"]["dark_three"],
+            bg_color_pressed = self.themes["app_color"]["dark_four"]
+        )
+        self.push_button_2.setFixedSize(100, 40)  
+        self.icon_2 = QIcon(Functions.set_svg_icon("icon_send.svg"))
+        self.push_button_2.setIcon(self.icon_2)
+
+        # ---------------------------------------------------------------------------------------
+        
+        # LABLE 1 - INVALID INPUT
+        self.lable_1 = QLabel("INVALID INPUT: \n please enter ingridients with spaces in between.")
+        self.lable_1.setStyleSheet("color: red;")
+        self.lable_1.setAlignment(Qt.AlignCenter)
+        
+        # ---------------------------------------------------------------------------------------
+        
+        # LIST 1 - recepies list 
+        self.list_1 = QListWidget()
+        self.list_1.setStyleSheet("QListWidget { background-color: " + self.themes["app_color"]["dark_one"] +"; }")
+
+        # ---------------------------------------------------------------------------------------
+
+        # EDIT LINE 1 - enter items here
+        self.line_edit_1.setFixedHeight(40)
+        self.line_edit_1.setPlaceholderText("enter items here :)")
+
+        # ---------------------------------------------------------------------------------------
+
+        # PAGE LAYOUT
+        self.ui.load_pages.page_3_layout.addWidget(self.list_1)
+        self.ui.load_pages.page_3_layout.addWidget(self.lable_1)
+        self.ui.load_pages.page_3_layout.addWidget(self.line_edit_1)
         self.ui.load_pages.page_3_layout.addWidget(self.push_button_2)
-        self.ui.load_pages.page_3_layout.addWidget(self.push_button_1)        
-         
-        self.list_widget.hide()
-        self.my_lable.hide()
 
-        def prin():
+        button_layout = QHBoxLayout()   # Create a QHBoxLayout to hold the line edit and button
+        button_layout.addWidget(self.line_edit_1,1) # Add the line edit to the layout
+        button_layout.addStretch()  # Add a stretchable space to push the button to the right
+        button_layout.addWidget(self.push_button_2) # Add the button to the layout
+        self.ui.load_pages.page_3_layout.addLayout(button_layout)   # Add the layout to the page_3_layout
+
+        button_layout = QHBoxLayout()   # Create a horizontal layout to hold the button and spacer
+        spacer = QSpacerItem(10, 0) # Add a stretchable spacer to push the button to the center horizontally
+        button_layout.addItem(spacer)
+        button_layout.addWidget(self.push_button_1) # Add the button to the layout
+        self.ui.load_pages.page_3_layout.addLayout(button_layout)   # Add the layout to the page_3_layout
+
+        # HIDE WIDGETS
+        self.list_1.hide()
+        self.lable_1.hide()
+        
+        # ---------------------------------------------------------------------------------------
+
+        # FUNCTIONS
+        def search_recepie():
             try:
-                response = user_input(self.line_edit.text())
-                self.my_lable.hide()
+                response = user_input(self.line_edit_1.text())
+                self.lable_1.hide()
+                self.list_1.clear()
                 counter = 0
                 for recepie in get_recepies(response):
                     if counter > 10:
                         break
                     counter += 1
                     item = QListWidgetItem(recepie)
-                    self.list_widget.addItem(item)
-                self.list_widget.show()
+                    self.list_1.addItem(item)
+                self.list_1.show()
                 
-                print(self.line_edit.text())
+                print(self.line_edit_1.text())
             except Exception as e:
                 print(e)
-                self.my_lable.show()
+                self.list_1.hide()
+                self.lable_1.show()
+                
         def open_website(item):
-            # Extract the URL from the clicked item's text
-            url = item.text()
+            url = item.text()   # Extract the URL from the clicked item's text
+            QDesktopServices.openUrl(QUrl(url)) # Open the URL in the default web browser
 
-            # Open the URL in the default web browser
-            QDesktopServices.openUrl(QUrl(url))
-        self.push_button_2.clicked.connect(prin)
-        
-        self.list_widget.itemClicked.connect(open_website)
+       
+        def get_ingridients_from_db():
+            #TODO: we want here to have a query that returns all the ingridiants that are marked as true from the db
+            self.line_edit_1.setText("nanana")
+            
+         # ---------------------------------------------------------------------------------------
 
-   # except Exception as e:
-    #    print("invalid input") # לתקן שהכל בסקופ של הטריי
+        # OPERATORS
+        self.push_button_2.clicked.connect(search_recepie)
+        self.list_1.itemClicked.connect(open_website)
+
+        # ---------------------------------------------------------------------------------------
+
         
         # RIGHT COLUMN
         # ///////////////////////////////////////////////////////////////
