@@ -23,6 +23,7 @@ import os
 import re
 from functools import reduce
 from ....connect_to_cloud_services.recipe_api import user_input, get_recepies
+from ....connect_to_cloud_services.imagga_api import check_image
 
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
@@ -420,21 +421,7 @@ class SetupMainWindow:
             is_active = True
         )
 
-        
-
-        # PY LINE EDIT
-        self.line_edit_1 = PyLineEdit(
-            text = "",
-            place_holder_text = "Place holder text",
-            radius = 8,
-            border_size = 2,
-            color = self.themes["app_color"]["text_foreground"],
-            selection_color = self.themes["app_color"]["white"],
-            bg_color = self.themes["app_color"]["dark_one"],
-            bg_color_active = self.themes["app_color"]["dark_three"],
-            context_color = self.themes["app_color"]["context_color"]
-        )
-        self.line_edit_1.setMinimumHeight(30)
+             
 
         # TOGGLE BUTTON
         self.toggle_button = PyToggle(
@@ -573,8 +560,18 @@ class SetupMainWindow:
         # ---------------------------------------------------------------------------------------
 
         # EDIT LINE 1 - enter items here
+        self.line_edit_1 = PyLineEdit(
+            text = "",
+            place_holder_text = "enter items here :)",
+            radius = 8,
+            border_size = 2,
+            color = self.themes["app_color"]["text_foreground"],
+            selection_color = self.themes["app_color"]["white"],
+            bg_color = self.themes["app_color"]["dark_one"],
+            bg_color_active = self.themes["app_color"]["dark_three"],
+            context_color = self.themes["app_color"]["context_color"]
+        )
         self.line_edit_1.setFixedHeight(40)
-        self.line_edit_1.setPlaceholderText("enter items here :)")
 
         # ---------------------------------------------------------------------------------------
 
@@ -641,6 +638,102 @@ class SetupMainWindow:
         # ---------------------------------------------------------------------------------------
 
         
+
+        #/////////////////////////////////////// PAGE 4 ///////////////////////////////////////
+
+        # PUSH BUTTON 3 - recognize image using IMAGGA
+        self.push_button_3 = PyPushButton(
+            text = "recognize image using IMAGGA",
+            radius = 8,
+            color = self.themes["app_color"]["text_foreground"],
+            bg_color = self.themes["app_color"]["dark_one"],
+            bg_color_hover = self.themes["app_color"]["dark_three"],
+            bg_color_pressed = self.themes["app_color"]["dark_four"]
+        )
+        self.push_button_3.setFixedSize(220, 40)  
+        self.icon_3 = QIcon(Functions.set_svg_icon("icon_send.svg"))
+        self.push_button_3.setIcon(self.icon_3)
+
+        # ---------------------------------------------------------------------------------------
+
+        # EDIT LINE 2 - enter image url here
+        self.line_edit_2 = PyLineEdit(
+            text = "",
+            place_holder_text = "enter image url here",
+            radius = 8,
+            border_size = 2,
+            color = self.themes["app_color"]["text_foreground"],
+            selection_color = self.themes["app_color"]["white"],
+            bg_color = self.themes["app_color"]["dark_one"],
+            bg_color_active = self.themes["app_color"]["dark_three"],
+            context_color = self.themes["app_color"]["context_color"]
+        )
+        self.line_edit_2.setFixedHeight(40)
+        
+        # ---------------------------------------------------------------------------------------
+
+        # LABLE 2 - INVALID INPUT
+        self.lable_2 = QLabel("INVALID INPUT: \n please enter a valid image url.")
+        self.lable_2.setStyleSheet("color: red;")
+        self.lable_2.setAlignment(Qt.AlignCenter)
+        
+        # ---------------------------------------------------------------------------------------
+
+        # LIST 2 - imagga list 
+        self.list_2 = QListWidget()
+        self.list_2.setStyleSheet("QListWidget { background-color: " + self.themes["app_color"]["dark_one"] +"; }")
+        
+        # ---------------------------------------------------------------------------------------
+
+        # PAGE LAYOUT
+        self.ui.load_pages.page_4_layout.addWidget(self.push_button_3)
+        self.ui.load_pages.page_4_layout.addWidget(self.line_edit_2)
+        self.ui.load_pages.page_4_layout.addWidget(self.lable_2)
+        self.ui.load_pages.page_4_layout.addWidget(self.list_2)
+
+
+        
+        button_layout = QHBoxLayout()   # Create a QHBoxLayout to hold the line edit and button
+        button_layout.addWidget(self.line_edit_2,1) # Add the line edit to the layout
+        button_layout.addStretch()  # Add a stretchable space to push the button to the right
+        button_layout.addWidget(self.push_button_3) # Add the button to the layout
+        self.ui.load_pages.page_4_layout.addLayout(button_layout)   # Add the layout to the page_3_layout
+        
+        # HIDE WIDGETS
+        self.lable_2.hide()
+        self.list_2.hide()
+
+        # ---------------------------------------------------------------------------------------
+
+        # FUNCTIONS
+        def imagga():
+            try:
+                response = check_image(self.line_edit_2.text())
+                self.lable_2.hide()
+                self.list_2.clear()
+                counter = 0
+                for item in response:
+                    if counter > 10:
+                        break
+                    counter += 1
+                    item = QListWidgetItem(item)
+                    self.list_2.addItem(item)
+                self.list_2.show()
+                
+                print(self.line_edit_2.text())
+            except Exception as e:
+                print(e)
+                self.list_2.hide()
+                self.lable_2.show()
+        
+        # ---------------------------------------------------------------------------------------
+
+        # OPERATORS
+        self.push_button_3.clicked.connect(imagga)
+
+        # ---------------------------------------------------------------------------------------
+
+
         # RIGHT COLUMN
         # ///////////////////////////////////////////////////////////////
 

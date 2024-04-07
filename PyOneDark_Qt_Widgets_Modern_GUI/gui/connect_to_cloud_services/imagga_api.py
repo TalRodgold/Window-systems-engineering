@@ -2,14 +2,14 @@ from typing import Optional
 import requests
 import os
 import tempfile
-from consts import *
+from .consts import *
 
 def delete_file(file_path: str):
     try:
         os.remove(file_path)
         print(f"File deleted successfully: {file_path}")
     except Exception as e:
-        print(f"Error deleting file: {e}")
+        raise e
 
 
 def get_imagga(image_path: str) -> list[str]:
@@ -40,7 +40,7 @@ def get_imagga(image_path: str) -> list[str]:
             else:
                 raise("Error:", response.status_code, response.text)
         except Exception as e:
-            print("Error occurred:", str(e))
+            raise e
 
 
 def download_image(url: str) -> Optional[str]:
@@ -63,20 +63,17 @@ def download_image(url: str) -> Optional[str]:
 
         return temp_path  # Return the path to the downloaded image
     except Exception as e:
-        print(f"Error downloading image: {e}")
-        return None
+        raise e
 
 
-def main(image_url: str):
-        
-    downloaded_image_path = download_image(image_url)
-    if downloaded_image_path:
-        resault = get_imagga(downloaded_image_path)
-        for i in resault:
-            print(i)
-        delete_file(downloaded_image_path)
-    else:
-        print("Failed to download image.")
-
-if __name__ == "__main__":
-    main("https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2022/07/what_to_know_apples_green_red_1296x728_header-1024x575.jpg?w=1155&h=1528")
+def check_image(image_url: str):
+    try:
+        downloaded_image_path = download_image(image_url)
+        if downloaded_image_path:
+            resault = get_imagga(downloaded_image_path)
+            delete_file(downloaded_image_path)
+            return resault
+        else:
+            raise Exception
+    except Exception as e:
+        raise e

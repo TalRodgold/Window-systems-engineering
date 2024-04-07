@@ -154,6 +154,25 @@ class Ui_MainPages(object):
         self.page_3_layout.addWidget(self.empty_page_label)
 
         self.pages.addWidget(self.page_3)
+        
+        self.page_4 = QWidget()
+        self.page_4.setObjectName(u"page_4")
+        self.page_4.setStyleSheet(u"QFrame {\n"
+"	font-size: 16pt;\n"
+"}")
+        self.page_4_layout = QVBoxLayout(self.page_4)
+        self.page_4_layout.setObjectName(u"page_4_layout")
+        self.empty_page_label_4 = QLabel(self.page_4)
+        self.empty_page_label_4.setObjectName(u"empty_page_label_4")
+        self.empty_page_label_4.setFont(font)
+        self.empty_page_label_4.setAlignment(Qt.AlignCenter)
+
+        self.page_4_layout.addWidget(self.empty_page_label_4)
+
+        
+
+
+        self.pages.addWidget(self.page_4)
 
         self.main_pages_layout.addWidget(self.pages)
 
@@ -170,8 +189,10 @@ class Ui_MainPages(object):
         MainPages.setWindowTitle(QCoreApplication.translate("MainPages", u"Form", None))
         self.label.setText(QCoreApplication.translate("MainPages", u"Welcome To your shoping list", None))
         self.title_label.setText(QCoreApplication.translate("MainPages", u"MY SHOPING LIST", None))
-
+        
         #self.description_label.setText(QCoreApplication.translate("MainPages", u"Here will be all the custom widgets, they will be added over time on this page.\n I will try to always record a new tutorial when adding a new Widget and updating the project on Patreon before launching on GitHub and GitHub after the public release.", None))
         self.empty_page_label.setText(QCoreApplication.translate("MainPages", u"WELCOME TO THE RECEPIE GENERATOR! \n \n You can find recpies with the ingredients you have by: \n \t \t \t \t \t 1) entering list of ingridients in text box. \n 2) importing items from your list.", None))
-    # retranslateUi
+        self.empty_page_label_4.setText(QCoreApplication.translate("MainPages", u"WELCOME TO THE IMAGE RECOGNITION SYSTEM! \n \n pleas enter an image url in the text box bellow.", None))
+
+        # retranslateUi
 
