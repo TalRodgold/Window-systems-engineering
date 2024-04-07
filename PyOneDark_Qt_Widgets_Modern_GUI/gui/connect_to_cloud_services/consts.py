@@ -1,4 +1,5 @@
 import enum
+import os
 
 # api for recepies
 RECEIPES_API = "https://edamam-recipe-search.p.rapidapi.com/api/recipes/v2"
@@ -23,6 +24,12 @@ IMAGGA_SECRET = 'fa10d16de4c930c643cfb106f4b3d0f2'
 IMAGGA_API = 'https://api.imagga.com/v2/tags'
 
 # Basic authentication header for imagga
-AUTH_HEADER = {
+IMAGGA_AUTH_HEADER = {
     'Authorization': 'Basic YWNjX2Y3ZmRkMmViOGIwZjM2OTpmYTEwZDE2ZGU0YzkzMGM2NDNjZmIxMDZmNGIzZDBmMg=='
 }
+
+# temporary file path for saving images before uploading to imagga
+TMP_FILE_PATH = os.path.join("PyOneDark_Qt_Widgets_Modern_GUI", "gui", "connect_to_cloud_services", "tmp")
+
+# confidence number for imagga resaults
+IMAGGA_CONFIDENCE = 80
