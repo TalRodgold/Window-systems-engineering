@@ -102,32 +102,14 @@ class SetupMainWindow:
             "btn_tooltip" : "Open informations",
             "show_top" : False,
             "is_active" : False
-        },
-        {
-            "btn_icon" : "icon_settings.svg",
-            "btn_id" : "btn_settings",
-            "btn_text" : "Settings",
-            "btn_tooltip" : "Open settings",
-            "show_top" : False,
-            "is_active" : False
         }
     ]
 
      # ADD TITLE BAR MENUS
     # ///////////////////////////////////////////////////////////////
     add_title_bar_menus = [
-        {
-            "btn_icon" : "icon_search.svg",
-            "btn_id" : "btn_search",
-            "btn_tooltip" : "Search",
-            "is_active" : False
-        },
-        {
-            "btn_icon" : "icon_settings.svg",
-            "btn_id" : "btn_top_settings",
-            "btn_tooltip" : "Top settings",
-            "is_active" : False
-        }
+       
+        
     ]
 
     # SETUP CUSTOM BTNs OF CUSTOM WIDGETS
@@ -690,7 +672,6 @@ class SetupMainWindow:
         self.ui.load_pages.page_4_layout.addWidget(self.line_edit_2)
         self.ui.load_pages.page_4_layout.addWidget(self.lable_2)
         self.ui.load_pages.page_4_layout.addWidget(self.list_2)
-
 
         
         button_layout = QHBoxLayout()   # Create a QHBoxLayout to hold the line edit and button

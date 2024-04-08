@@ -192,7 +192,7 @@ class Ui_MainPages(object):
         
         #self.description_label.setText(QCoreApplication.translate("MainPages", u"Here will be all the custom widgets, they will be added over time on this page.\n I will try to always record a new tutorial when adding a new Widget and updating the project on Patreon before launching on GitHub and GitHub after the public release.", None))
         self.empty_page_label.setText(QCoreApplication.translate("MainPages", u"WELCOME TO THE RECEPIE GENERATOR! \n \n You can find recpies with the ingredients you have by: \n \t \t \t \t \t 1) entering list of ingridients in text box. \n 2) importing items from your list.", None))
-        self.empty_page_label_4.setText(QCoreApplication.translate("MainPages", u"WELCOME TO THE IMAGE RECOGNITION SYSTEM! \n \n pleas enter an image url in the text box bellow.", None))
+        self.empty_page_label_4.setText(QCoreApplication.translate("MainPages", u"WELCOME TO THE IMAGE RECOGNITION SYSTEM! \n \n please enter an image url in the text box bellow.", None))
 
         # retranslateUi
 

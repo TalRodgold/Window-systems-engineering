@@ -81,8 +81,8 @@ class MainWindow(QMainWindow):
             self.ui.left_menu.deselect_all_tab()
 
         # Get Title Bar Btn And Reset Active         
-        top_settings = MainFunctions.get_title_bar_btn(self, "btn_top_settings")
-        top_settings.set_active(False)
+        #top_settings = MainFunctions.get_title_bar_btn(self, "btn_top_settings")
+        #top_settings.set_active(False)
 
         # LEFT MENU
         # ///////////////////////////////////////////////////////////////
@@ -178,22 +178,7 @@ class MainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
         
         # SETTINGS TITLE BAR
-        if btn.objectName() == "btn_top_settings":
-            # Toogle Active
-            if not MainFunctions.right_column_is_visible(self):
-                btn.set_active(True)
-
-                # Show / Hide
-                MainFunctions.toggle_right_column(self)
-            else:
-                btn.set_active(False)
-
-                # Show / Hide
-                MainFunctions.toggle_right_column(self)
-
-            # Get Left Menu Btn            
-            top_settings = MainFunctions.get_left_menu_btn(self, "btn_settings")
-            top_settings.set_active_tab(False)            
+        
 
         # DEBUG
         print(f"Button {btn.objectName()}, clicked!")

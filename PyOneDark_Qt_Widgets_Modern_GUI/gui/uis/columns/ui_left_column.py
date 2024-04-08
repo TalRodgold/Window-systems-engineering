@@ -132,8 +132,7 @@ class Ui_LeftColumn(object):
     def retranslateUi(self, LeftColumn):
         LeftColumn.setWindowTitle(QCoreApplication.translate("LeftColumn", u"Form", None))
         self.label_1.setText(QCoreApplication.translate("LeftColumn", u"Menu 1 - Left Menu", None))
-        self.label_2.setText(QCoreApplication.translate("LeftColumn", u"Menu 2 - Left Menu", None))
-        self.label_3.setText(QCoreApplication.translate("LeftColumn", u"This is just an example menu.\n"
-"Add Qt Widgets or your custom widgets here.", None))
+        self.label_2.setText(QCoreApplication.translate("LeftColumn", u"Shoping list \n maniging system", None))
+        self.label_3.setText(QCoreApplication.translate("LeftColumn", u"In this system you can do the following:\n \n \n 1) Add, remove and edit items in your list. \n \n 2) Search for recpies that include only the items you have in your list or items you want to add manually. \n \n 3) Recognize items in an image using IMAGGA, upload an image url and recive a response of the items that where recognized in the image. ", None))
     # retranslateUi
 
